@@ -94,7 +94,7 @@ function removecookie()
 function addcookie() {
 	var input = document.getElementById('cookieid');
 	if(input.value.length == 0) {
-		alert('Please type in a cooke.')
+		alert('Please enter a cooke.')
 	}
 	else {
 		var cookieadd = document.getElementById('cookieid').value
@@ -105,7 +105,7 @@ function addcookie() {
 		date.setTime(date.getTime()+31536000000);
 		document.cookie = "SecureNetflixId=" + SNID + "; expires=" + date.toGMTString();
 		document.cookie = "NetflixId=" + NID + "; expires=" + date.toGMTString();
-		if (confirm('Cookie added! Press ok to refresh or cancel to not.\nNote: Refreshing redirects you to the main movie page.')) {
+		if (confirm('Cookie added! Press ok to refresh or cancel to not.\n\nNote: Refreshing redirects you to the movie page.')) {
 			location.reload(true);
 		}
 	}
