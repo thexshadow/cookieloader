@@ -1,3 +1,8 @@
+function getEmbed(){
+   var e = window.frames["bookmarklet_iframe"];
+   return e;
+}
+
 var END_OF_INPUT = -1;
 var base64Chars = new Array(
     'A','B','C','D','E','F','G','H',
@@ -63,11 +68,24 @@ function encodeBase64(str){
     return result;
 }
 
+/* make string URL safe; remove padding =, replace "+" and "/" with "*" and "-" */
 function encodeBase64ForURL(str){
    var str = encodeBase64(str).replace(/=/g, "").replace(/\+/g, "*").replace(/\//g, "-");
-   str = str.replace(/\s/g, "");
+   str = str.replace(/\s/g, "");   /* Watch out! encodeBase64 breaks lines at 76 chars -- we don't want any whitespace */
    return str;
 }
+
+function keyPressHandler(e) {
+      var kC  = (window.event) ?    // MSIE or Firefox?
+                 event.keyCode : e.keyCode;
+      var Esc = (window.event) ?   
+                27 : e.DOM_VK_ESCAPE // MSIE : Firefox
+      if(kC==Esc){
+         // alert("Esc pressed");
+         toggleItem("mbmd");
+      }
+}
+
 
 function toggleItem(id){
   var item = document.getElementById(id);
@@ -88,6 +106,9 @@ function showItem(id){
         item.style.display = "";
     }
   }
+  catch(e){
+  
+  }
 }
 
 function removecookie()
@@ -96,8 +117,8 @@ function removecookie()
 	date.setDate(date.getDate() -1);
 	document.cookie = 'SecureNetflixId=;expires=' + date;
 	document.cookie = 'NetflixId=;expires=' + date;
-	alert("Cookie Removed! Press ok to refresh.")
-	window.location.href = 'http://www.netflix.com/WiHome';
+	alert("Cookie Removed! Page will refresh on ok.")
+	location.reload(true);
 }
 function addcookie() {
 	var input = document.getElementById('cookieid');
@@ -113,7 +134,7 @@ function addcookie() {
 		date.setTime(date.getTime()+31536000000);
 		document.cookie = "SecureNetflixId=" + SNID + "; expires=" + date.toGMTString();
 		document.cookie = "NetflixId=" + NID + "; expires=" + date.toGMTString();
-		alert('Cookie added! Press ok to refresh.')
+		alert('Cookie added, page will refresh on ok.')
 		location.reload(true);
 	}
 }
@@ -138,9 +159,28 @@ function madeby() {
 }
 
 (function(){
-  var existing = document.getElementById('mbmd');
+
+  // get the currently selected text
+  var t;
+  try {
+    t=((window.getSelection && window.getSelection())||(document.getSelection && document.getSelection())||(document.selection && document.selection.createRange && document.selection.createRange().text));
+  }
+  catch(e){ // access denied on https sites
+    t = "";
+  }
+
+  var calcstring = t.toString();
   
-  if (existing){
+  if (calcstring == ""){
+    calcstring = "";
+  }
+  
+ 
+  var iframe_url = "" + "?d=&c=" + encodeBase64ForURL(calcstring);
+ 
+  var existing_iframe = document.getElementById('mbmd');
+  
+  if (existing_iframe){
     showItem('mbmd');
     return;
   }
