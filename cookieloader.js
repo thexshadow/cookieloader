@@ -113,16 +113,11 @@ function showItem(id){
 
 function removecookie()
 {
-	if (document.cookie.indexOf("NetflixId") >= 1) {
-		date = new Date();
-		date.setDate(date.getDate() -1);
-		document.cookie = 'SecureNetflixId=;expires=' + date;
-		document.cookie = 'NetflixId=;expires=' + date;
-		alert("Cookies Removed!")
-	}
-	else {
-		alert('No cookie found!')
-	}
+	date = new Date();
+	date.setDate(date.getDate() -1);
+	document.cookie = 'SecureNetflixId=;expires=' + date;
+	document.cookie = 'NetflixId=;expires=' + date;
+	alert("Cookies Removed!")
 }
 function addcookie() {
 	var input = document.getElementById('cookieid');
