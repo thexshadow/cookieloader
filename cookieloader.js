@@ -1,65 +1,64 @@
 var END_OF_INPUT = -1;
 var base64Chars = new Array(
-    'A','B','C','D','E','F','G','H',
-    'I','J','K','L','M','N','O','P',
-    'Q','R','S','T','U','V','W','X',
-    'Y','Z','a','b','c','d','e','f',
-    'g','h','i','j','k','l','m','n',
-    'o','p','q','r','s','t','u','v',
-    'w','x','y','z','0','1','2','3',
-    '4','5','6','7','8','9','+','/'
+	'A','B','C','D','E','F','G','H',
+	'I','J','K','L','M','N','O','P',
+	'Q','R','S','T','U','V','W','X',
+	'Y','Z','a','b','c','d','e','f',
+	'g','h','i','j','k','l','m','n',
+	'o','p','q','r','s','t','u','v',
+	'w','x','y','z','0','1','2','3',
+	'4','5','6','7','8','9','+','/'
 )
 var reverseBase64Chars = new Array();
 for (var i=0; i < base64Chars.length; i++){
-    reverseBase64Chars[base64Chars[i]] = i;
+	reverseBase64Chars[base64Chars[i]] = i;
 }
 var base64Str;
 var base64Count;
 function setBase64Str(str){
-    base64Str = str;
-    base64Count = 0;
+	base64Str = str;
+	base64Count = 0;
 }
-function readBase64(){    
-    if (!base64Str) return END_OF_INPUT;
-    if (base64Count >= base64Str.length) return END_OF_INPUT;
-    var c = base64Str.charCodeAt(base64Count) & 0xff;
-    base64Count++;
-    return c;
+function readBase64(){
+	if (!base64Str) return END_OF_INPUT;
+	if (base64Count >= base64Str.length) return END_OF_INPUT;
+	var c = base64Str.charCodeAt(base64Count) & 0xff;
+	base64Count++;
+	return c;
 }
-
 function encodeBase64(str){
-    setBase64Str(str);
-    var result = '';
-    var inBuffer = new Array(3);
-    var lineCount = 0;
-    var done = false;
-    while (!done && (inBuffer[0] = readBase64()) != END_OF_INPUT){
-        inBuffer[1] = readBase64();
-        inBuffer[2] = readBase64();
-        result += (base64Chars[ inBuffer[0] >> 2 ]);
-        if (inBuffer[1] != END_OF_INPUT){
-            result += (base64Chars [(( inBuffer[0] << 4 ) & 0x30) | (inBuffer[1] >> 4) ]);
-            if (inBuffer[2] != END_OF_INPUT){
-                result += (base64Chars [((inBuffer[1] << 2) & 0x3c) | (inBuffer[2] >> 6) ]);
-                result += (base64Chars [inBuffer[2] & 0x3F]);
-            } else {
-                result += (base64Chars [((inBuffer[1] << 2) & 0x3c)]);
-                result += ('=');
-                done = true;
-            }
-        } else {
-            result += (base64Chars [(( inBuffer[0] << 4 ) & 0x30)]);
-            result += ('=');
-            result += ('=');
-            done = true;
-        }
-        lineCount += 4;
-        if (lineCount >= 76){
-            result += ('\n');
-            lineCount = 0;
-        }
-    }
-    return result;
+	setBase64Str(str);
+	var result = '';
+	var inBuffer = new Array(3);
+	var lineCount = 0;
+	var done = false;
+	while (!done && (inBuffer[0] = readBase64()) != END_OF_INPUT){
+		inBuffer[1] = readBase64();
+		inBuffer[2] = readBase64();
+		result += (base64Chars[ inBuffer[0] >> 2 ]);
+		if (inBuffer[1] != END_OF_INPUT){
+			result += (base64Chars [(( inBuffer[0] << 4 ) & 0x30) | (inBuffer[1] >> 4) ]);
+			if (inBuffer[2] != END_OF_INPUT){
+				result += (base64Chars [((inBuffer[1] << 2) & 0x3c) | (inBuffer[2] >> 6) ]);
+				result += (base64Chars [inBuffer[2] & 0x3F]);
+			} else {
+				result += (base64Chars [((inBuffer[1] << 2) & 0x3c)]);
+				result += ('=');
+				done = true;
+			}
+		} else {
+			result += (base64Chars [(( inBuffer[0] << 4 ) & 0x30)]);
+			result += ('=');
+			result += ('=');
+			done = true;
+		}
+		lineCount += 4;
+		if (lineCount >= 76){
+			result += ('\n');
+			lineCount = 0;
+		}
+	}
+	return result;
 }
 function encodeBase64ForURL(str){
    var str = encodeBase64(str).replace(/=/g, "").replace(/\+/g, "*").replace(/\//g, "-");
@@ -67,21 +66,21 @@ function encodeBase64ForURL(str){
    return str;
 }
 function toggleItem(id){
-  var item = document.getElementById(id);
-  if(item){
-    if ( item.style.display == "none"){
-      item.style.display = "";
-    }
-    else{
-      item.style.display = "none";
-    } 
-  }
+	var item = document.getElementById(id);
+	if(item){
+		if ( item.style.display == "none"){
+			item.style.display = "";
+		}
+		else{
+			item.style.display = "none";
+		} 
+	}
 }
 function showItem(id){
-    var item = document.getElementById(id);
-    if(item){
-        item.style.display = "";
-    }
+	var item = document.getElementById(id);
+	if(item){
+		item.style.display = "";
+	}
 }
 function removecookie()
 {
@@ -130,14 +129,14 @@ function madeby() {
 	alert('Made by: thexshadow @ Leax.sx')
 }
 (function(){
-  var existing = document.getElementById('mbmd');
-  if (existing){
-    showItem('mbmd');
-    return;
-  }
-  var div = document.createElement("div");
-  div.id = "mbmd";
-  var str = "";
+	var existing = document.getElementById('mbmd');
+	if (existing){
+		showItem('mbmd');
+		return;
+	}
+	var div = document.createElement("div");
+	div.id = "mbmd";
+	var str = "";
 	str += "<style>.cookiemain{width:500px;height:95px;background-color:red;position:absolute;text-align:center;top:0;right:0;margin:10px;border:3px double #FFF;z-index:10000000}.sb{width:20px;background:#fff;text-align:center}.sb:hover{cursor:pointer}#bh{color:#fff;font-weight:700}#cookieid{display:block;margin:0;width:100%;text-align:center}.bb{border-radius:3px;color:#000;display:inline-block;border:0;height:24px;margin:8px 2px 0;width:120px;text-align:center;position:relative;background:#fff;line-height:24px}.bb:hover{cursor:pointer}</style>"
 	str += "<div class='cookiemain'>";
 	str += "<div class='sb' style='float:right;' onclick='toggleItem(&quot;mbmd&quot;);'>X</div>";
@@ -150,6 +149,6 @@ function madeby() {
 	str += "<div class='bb' onclick='addcookie()'>Submit Cookie</div>";
 	str += "</div>";
 	str += "</div>";
-  div.innerHTML = str;
-  document.body.insertBefore(div, document.body.firstChild);
+	div.innerHTML = str;
+	document.body.insertBefore(div, document.body.firstChild);
 })()
