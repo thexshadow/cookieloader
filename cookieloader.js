@@ -142,12 +142,12 @@ function madeby() {
 	str += "<div class='sb' style='float:right;' onclick='togglediv(&quot;mbmd&quot;);'>X</div>";
 	str += "<div class='sb' style='float:left;' onclick='madeby()'>?</div>";
 	str += "<span id='bh'>NETFLIX COOKIE LOADER</span>";
-	str += "<div style='padding:10px;'>";
+	
 	str += "<input type='text' placeholder='COO:KIE' id='cookieid' name='cookie'>";
 	str += "<div class='bb' onclick='viewcookie()'>View Cookie</div>";
 	str += "<div class='bb' onclick='removecookie()'>Remove Cookie</div>";
 	str += "<div class='bb' onclick='addcookie()'>Submit Cookie</div>";
-	str += "</div>";
+	
 	str += "</div>";
 	div.innerHTML = str;
 	document.body.insertBefore(div, document.body.firstChild);
