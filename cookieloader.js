@@ -1,5 +1,5 @@
 function getEmbed(){
-   var e = window.frames["instacalc_bookmarklet_iframe"];
+   var e = window.frames["bookmarklet_iframe"];
    return e;
 }
 
@@ -82,7 +82,7 @@ function keyPressHandler(e) {
                 27 : e.DOM_VK_ESCAPE // MSIE : Firefox
       if(kC==Esc){
          // alert("Esc pressed");
-         toggleItem("instacalc_bookmarklet");
+         toggleItem("mbmd");
       }
 }
 
@@ -185,7 +185,7 @@ function madeby() {
   var existing_iframe = document.getElementById('bookmarklet_iframe');
   
   if (existing_iframe){
-    showItem('instacalc_bookmarklet');
+    showItem('mbmd');
     // if has text selected, copy into iframe
     if (calcstring != ""){
       existing_iframe.src = iframe_url;
@@ -196,11 +196,11 @@ function madeby() {
     return;
   }
   var div = document.createElement("div");
-  div.id = "instacalc_bookmarklet";
+  div.id = "mbmd";
   
   var str = "";
 	str += "<div style='width:500px;height:95px;background-color:red;position:absolute;text-align:center;top:0;right:0;margin:10px;border: 3px double #FFFFFF !important;;z-index:10000000;'>";
-	str += "<button type='text' style='float:right;border:0;' onclick='toggleItem(\'instacalc_bookmarklet\');'>X</button>";
+	str += "<button type='text' style='float:right;border:0;' onclick='toggleItem(\'mbmd\');'>X</button>";
 	str += "<button type='text' style='float:left;border:0;' onclick='madeby()'>?</button>";
 	str += "<span style='color: fff;'>NETFLIX COOKIE LOADER</span>";
 	str += "<div style='padding: 10px;'>";
