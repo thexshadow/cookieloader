@@ -8,8 +8,7 @@ var base64Chars = new Array(
     'o','p','q','r','s','t','u','v',
     'w','x','y','z','0','1','2','3',
     '4','5','6','7','8','9','+','/'
-);
-
+)
 var reverseBase64Chars = new Array();
 for (var i=0; i < base64Chars.length; i++){
     reverseBase64Chars[base64Chars[i]] = i;
@@ -20,7 +19,6 @@ function setBase64Str(str){
     base64Str = str;
     base64Count = 0;
 }
-
 function readBase64(){    
     if (!base64Str) return END_OF_INPUT;
     if (base64Count >= base64Str.length) return END_OF_INPUT;
@@ -28,7 +26,6 @@ function readBase64(){
     base64Count++;
     return c;
 }
-
 function encodeBase64(str){
     setBase64Str(str);
     var result = '';
@@ -63,13 +60,11 @@ function encodeBase64(str){
     }
     return result;
 }
-
 function encodeBase64ForURL(str){
    var str = encodeBase64(str).replace(/=/g, "").replace(/\+/g, "*").replace(/\//g, "-");
    str = str.replace(/\s/g, "");
    return str;
 }
-
 function toggleItem(id){
   var item = document.getElementById(id);
   if(item){
@@ -81,14 +76,12 @@ function toggleItem(id){
     } 
   }
 }
-
 function showItem(id){
     var item = document.getElementById(id);
     if(item){
         item.style.display = "";
     }
 }
-
 function removecookie()
 {
 	date = new Date();
@@ -98,7 +91,6 @@ function removecookie()
 	alert("Cookie Removed! Press ok to refresh.")
 	window.location.href = 'http://www.netflix.com/WiHome';
 }
-
 function addcookie() {
 	var input = document.getElementById('cookieid');
 	if(input.value.length == 0) {
@@ -117,7 +109,6 @@ function addcookie() {
 		location.reload(true);
 	}
 }
-
 function viewcookie() {
 	if (document.cookie.indexOf("NetflixId") >= 0) {
 		var id1 = "SecureNetflixId=";
@@ -134,11 +125,9 @@ function viewcookie() {
 		alert('No cookie found!')
 	}
 }
-
 function madeby() {
 	alert('Made by: thexshadow @ Leax.sx')
 }
-
 (function(){
   var existing = document.getElementById('mbmd');
   
