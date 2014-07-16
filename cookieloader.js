@@ -185,6 +185,6 @@ function madeby() {
 	str += "</div>";
   div.innerHTML = str;
   
-  div.onkeypress = keyPressHandler;
+  
   document.body.insertBefore(div, document.body.firstChild);
 })()
