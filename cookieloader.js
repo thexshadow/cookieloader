@@ -1,8 +1,3 @@
-function getEmbed(){
-   var e = window.frames["bookmarklet_iframe"];
-   return e;
-}
-
 var END_OF_INPUT = -1;
 var base64Chars = new Array(
     'A','B','C','D','E','F','G','H',
