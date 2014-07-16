@@ -160,23 +160,9 @@ function madeby() {
 
 (function(){
 
-  // get the currently selected text
-  var t;
-  try {
-    t=((window.getSelection && window.getSelection())||(document.getSelection && document.getSelection())||(document.selection && document.selection.createRange && document.selection.createRange().text));
-  }
-  catch(e){ // access denied on https sites
-    t = "";
-  }
 
-  var calcstring = t.toString();
-  
-  if (calcstring == ""){
-    calcstring = "";
-  }
-  
  
-  var iframe_url = "" + "?d=&c=" + encodeBase64ForURL(calcstring);
+  
  
   var existing_iframe = document.getElementById('mbmd');
   
