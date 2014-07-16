@@ -1,5 +1,3 @@
-
-
 var END_OF_INPUT = -1;
 var base64Chars = new Array(
     'A','B','C','D','E','F','G','H',
@@ -16,13 +14,13 @@ var reverseBase64Chars = new Array();
 for (var i=0; i < base64Chars.length; i++){
     reverseBase64Chars[base64Chars[i]] = i;
 }
-
 var base64Str;
 var base64Count;
 function setBase64Str(str){
     base64Str = str;
     base64Count = 0;
 }
+
 function readBase64(){    
     if (!base64Str) return END_OF_INPUT;
     if (base64Count >= base64Str.length) return END_OF_INPUT;
@@ -30,6 +28,7 @@ function readBase64(){
     base64Count++;
     return c;
 }
+
 function encodeBase64(str){
     setBase64Str(str);
     var result = '';
@@ -65,13 +64,11 @@ function encodeBase64(str){
     return result;
 }
 
-/* make string URL safe; remove padding =, replace "+" and "/" with "*" and "-" */
 function encodeBase64ForURL(str){
    var str = encodeBase64(str).replace(/=/g, "").replace(/\+/g, "*").replace(/\//g, "-");
-   str = str.replace(/\s/g, "");   /* Watch out! encodeBase64 breaks lines at 76 chars -- we don't want any whitespace */
+   str = str.replace(/\s/g, "");
    return str;
 }
-
 
 function toggleItem(id){
   var item = document.getElementById(id);
@@ -91,9 +88,6 @@ function showItem(id){
     if(item){
         item.style.display = "";
     }
-  }
-  catch(e){
-  
   }
 }
 
@@ -156,7 +150,6 @@ function madeby() {
   }
   var div = document.createElement("div");
   div.id = "mbmd";
-  
   var str = "";
 	str += "<div style='width:500px;height:95px;background-color:red;position:absolute;text-align:center;top:0;right:0;margin:10px;border: 3px double #FFFFFF !important;;z-index:10000000;'>";
 	str += "<button type='text' style='float:right;border:0;' onclick='toggleItem(\&quot;mbmd\&quot;);'>X</button>";
@@ -170,7 +163,5 @@ function madeby() {
 	str += "</div>";
 	str += "</div>";
   div.innerHTML = str;
-  
-  
   document.body.insertBefore(div, document.body.firstChild);
 })()
