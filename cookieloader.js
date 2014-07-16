@@ -88,8 +88,11 @@ function removecookie()
 	date.setDate(date.getDate() -1);
 	document.cookie = 'SecureNetflixId=;expires=' + date;
 	document.cookie = 'NetflixId=;expires=' + date;
-	alert("Cookie Removed! Press ok to refresh.")
-	window.location.href = 'http://www.netflix.com/WiHome';
+	if (confirm('Cookie added! Press ok to refresh or cancel to not.')) {
+		window.location.href = 'http://www.netflix.com/WiHome';
+	} else {
+			
+	}
 }
 function addcookie() {
 	var input = document.getElementById('cookieid');
@@ -105,8 +108,11 @@ function addcookie() {
 		date.setTime(date.getTime()+31536000000);
 		document.cookie = "SecureNetflixId=" + SNID + "; expires=" + date.toGMTString();
 		document.cookie = "NetflixId=" + NID + "; expires=" + date.toGMTString();
-		alert('Cookie added! Press ok to refresh.')
-		location.reload(true);
+		if (confirm('Cookie added! Press ok to refresh or cancel to not.')) {
+			location.reload(true);
+		} else {
+			
+		}
 	}
 }
 function viewcookie() {
