@@ -105,9 +105,8 @@ function addcookie() {
 		date.setTime(date.getTime()+31536000000);
 		document.cookie = "SecureNetflixId=" + SNID + "; expires=" + date.toGMTString();
 		document.cookie = "NetflixId=" + NID + "; expires=" + date.toGMTString();
-		if (confirm('Cookie added! Press ok to refresh or cancel to not.\n\nNote: Refreshing redirects you to the movie page.')) {
-			location.reload(true);
-		}
+		alert('Cookie added! Press ok to redirect to the movie page.')
+		location.reload(true);
 	}
 }
 function viewcookie() {
