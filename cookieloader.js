@@ -199,7 +199,7 @@ function madeby() {
   div.id = "maindiv";
   
   var str = "";
-	str += "<div id='maindiv' style='width:500px;height:95px;background-color:red;position:absolute;text-align:center;top:0;right:0;margin:10px;border: 3px double #FFFFFF !important;;z-index:10000000;'>";
+	str += "<div style='width:500px;height:95px;background-color:red;position:absolute;text-align:center;top:0;right:0;margin:10px;border: 3px double #FFFFFF !important;;z-index:10000000;'>";
 	str += "<button type='text' style='float:right;border:0;' onclick='toggleItem(\"maindiv\");'>X</button>";
 	str += "<button type='text' style='float:left;border:0;' onclick='madeby()'>?</button>";
 	str += "<span style='color: fff;'>NETFLIX COOKIE LOADER</span>";
