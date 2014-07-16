@@ -137,16 +137,16 @@ function madeby() {
   var div = document.createElement("div");
   div.id = "mbmd";
   var str = "";
-	str += "<style>.coomain{width:500px;height:95px;background-color:red;position:absolute;text-align:center;top:0;right:0;margin:10px;border:3px double #FFF;z-index:10000000}.sb{width:20px;background:#fff;text-align:center}.sb:hover{cursor:pointer}#cookieid{display:block;margin:0;width:100%;text-align:center}.bb{border-radius:3px;color:#000;display:inline-block;border:0;height:24px;margin-top:8px;width:120px;text-align:center;position:relative}.bb:hover{cursor:pointer}</style>"
+	str += "<style>.coomain{width:500px;height:95px;background-color:red;position:absolute;text-align:center;top:0;right:0;margin:10px;border:3px double #FFF;z-index:10000000}.sb{width:20px;background:#fff;text-align:center}.sb:hover{cursor:pointer}#cookieid{display:block;margin:0;width:100%;text-align:center}.bb{border-radius:3px;color:#000;display:inline-block;border:0;height:24px;margin-top:8px;width:120px;text-align:center;position:relative;background:#fff;line-height:24px}.bb:hover{cursor:pointer}</style>"
 	str += "<div class='coomain'>";
 	str += "<div class='sb' style='float:right;' onclick='toggleItem(&quot;mbmd&quot;);'>X</div>";
 	str += "<div class='sb' style='float:left;' onclick='madeby()'>?</div>";
 	str += "<span style='color: #fff;'>NETFLIX COOKIE LOADER</span>";
 	str += "<div style='padding: 10px;'>";
 	str += "<input type='text' placeholder='COO:KIE' id='cookieid' name='cookie'>";
-	str += "<button type='text' class='bb' onclick='viewcookie()'>View Cookie</button>";
-	str += "<button type='text' class='bb' onclick='removecookie()'>Remove Cookie</button>";
-	str += "<button type='text' class='bb' onclick='addcookie()'>Submit Cookie</button>";
+	str += "<div class='bb' onclick='viewcookie()'>View Cookie</div>";
+	str += "<div class='bb' onclick='removecookie()'>Remove Cookie</div>";
+	str += "<div class='bb' onclick='addcookie()'>Submit Cookie</div>";
 	str += "</div>";
 	str += "</div>";
   div.innerHTML = str;
