@@ -141,8 +141,8 @@ function madeby() {
 	str += "<div class='cookiemain'>";
 	str += "<div class='sb' style='float:right;' onclick='togglediv(&quot;mbmd&quot;);'>X</div>";
 	str += "<div class='sb' style='float:left;' onclick='madeby()'>?</div>";
-	str += "<span id='bh'>NETFLIX COOKIE LOADER</span>";
-	str += "<input type='text' placeholder='COO:KIE' id='cookieid'>";
+	str += "<div id='bh'>NETFLIX COOKIE LOADER</div>";
+	str += "<input type='text' id='cookieid' placeholder='COO:KIE'>";
 	str += "<div class='bb' onclick='viewcookie()'>View Cookie</div>";
 	str += "<div class='bb' onclick='removecookie()'>Remove Cookie</div>";
 	str += "<div class='bb' onclick='addcookie()'>Submit Cookie</div>";
