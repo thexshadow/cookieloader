@@ -70,17 +70,6 @@ function encodeBase64ForURL(str){
    return str;
 }
 
-function keyPressHandler(e) {
-      var kC  = (window.event) ?    // MSIE or Firefox?
-                 event.keyCode : e.keyCode;
-      var Esc = (window.event) ?   
-                27 : e.DOM_VK_ESCAPE // MSIE : Firefox
-      if(kC==Esc){
-         // alert("Esc pressed");
-         toggleItem("mbmd");
-      }
-}
-
 
 function toggleItem(id){
   var item = document.getElementById(id);
