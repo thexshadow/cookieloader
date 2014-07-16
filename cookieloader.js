@@ -94,8 +94,6 @@ function showItem(id){
         item.style.display = "";
     }
   }
-  catch(e){
-  }
 }
 
 function removecookie()
