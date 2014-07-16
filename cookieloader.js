@@ -88,9 +88,8 @@ function removecookie()
 	date.setDate(date.getDate() -1);
 	document.cookie = 'SecureNetflixId=;expires=' + date;
 	document.cookie = 'NetflixId=;expires=' + date;
-	if (confirm('Cookie removed! Press ok to refresh or cancel to not.')) {
-		window.location.href = 'http://www.netflix.com/WiHome';
-	}
+	alert('Cookie removed! Press ok to refresh.')
+	window.location.href = 'http://www.netflix.com/WiHome';
 }
 function addcookie() {
 	var input = document.getElementById('cookieid');
