@@ -1,5 +1,5 @@
 var END_OF_INPUT = -1;
-var base64Chars = new Array(
+var base64chars = new Array(
 	'A','B','C','D','E','F','G','H',
 	'I','J','K','L','M','N','O','P',
 	'Q','R','S','T','U','V','W','X',
@@ -9,9 +9,9 @@ var base64Chars = new Array(
 	'w','x','y','z','0','1','2','3',
 	'4','5','6','7','8','9','+','/'
 )
-var reversebase64Chars = new Array();
-for (var i=0; i < base64Chars.length; i++){
-	reversebase64Chars[base64Chars[i]] = i;
+var reversebase64chars = new Array();
+for (var i=0; i < base64chars.length; i++){
+	reversebase64chars[base64chars[i]] = i;
 }
 var base64Str;
 var base64Count;
@@ -35,19 +35,19 @@ function encodebase64(str){
 	while (!done && (inBuffer[0] = readbase64()) != END_OF_INPUT){
 		inBuffer[1] = readbase64();
 		inBuffer[2] = readbase64();
-		result += (base64Chars[ inBuffer[0] >> 2 ]);
+		result += (base64chars[ inBuffer[0] >> 2 ]);
 		if (inBuffer[1] != END_OF_INPUT){
-			result += (base64Chars [(( inBuffer[0] << 4 ) & 0x30) | (inBuffer[1] >> 4) ]);
+			result += (base64chars [(( inBuffer[0] << 4 ) & 0x30) | (inBuffer[1] >> 4) ]);
 			if (inBuffer[2] != END_OF_INPUT){
-				result += (base64Chars [((inBuffer[1] << 2) & 0x3c) | (inBuffer[2] >> 6) ]);
-				result += (base64Chars [inBuffer[2] & 0x3F]);
+				result += (base64chars [((inBuffer[1] << 2) & 0x3c) | (inBuffer[2] >> 6) ]);
+				result += (base64chars [inBuffer[2] & 0x3F]);
 			} else {
-				result += (base64Chars [((inBuffer[1] << 2) & 0x3c)]);
+				result += (base64chars [((inBuffer[1] << 2) & 0x3c)]);
 				result += ('=');
 				done = true;
 			}
 		} else {
-			result += (base64Chars [(( inBuffer[0] << 4 ) & 0x30)]);
+			result += (base64chars [(( inBuffer[0] << 4 ) & 0x30)]);
 			result += ('=');
 			result += ('=');
 			done = true;
@@ -88,13 +88,13 @@ function removecookie()
 	date.setDate(date.getDate() -1);
 	document.cookie = 'SecureNetflixId=;expires=' + date;
 	document.cookie = 'NetflixId=;expires=' + date;
-	alert('Cookie removed! Press ok to refresh.')
+	alert('Cookie removed! Press ok to refresh.');
 	window.location.href = 'http://www.netflix.com/WiHome';
 }
 function addcookie() {
 	var input = document.getElementById('cookieid');
 	if(input.value.length == 0) {
-		alert('Please enter a cooke.')
+		alert('Please enter a cooke.');
 	}
 	else {
 		var cookieadd = document.getElementById('cookieid').value
@@ -105,7 +105,7 @@ function addcookie() {
 		date.setTime(date.getTime()+31536000000);
 		document.cookie = "SecureNetflixId=" + SNID + "; expires=" + date.toGMTString();
 		document.cookie = "NetflixId=" + NID + "; expires=" + date.toGMTString();
-		alert('Cookie added! Press ok to redirect to the movie page.')
+		alert('Cookie added! Press ok to redirect to the movie page.');
 		location.reload(true);
 	}
 }
@@ -122,11 +122,11 @@ function viewcookie() {
 		}
 	}
 	else {
-		alert('No cookie found!')
+		alert('No cookie found!');
 	}
 }
 function madeby() {
-	alert('Made by: thexshadow @ Leax.sx')
+	alert('Made by: thexshadow @ Leax.sx');
 }
 (function(){
 	var existing = document.getElementById('mbmd');
@@ -137,7 +137,7 @@ function madeby() {
 	var div = document.createElement("div");
 	div.id = "mbmd";
 	var str = "";
-	str += "<style>.cookiemain{width:500px;height:85px;background-color:red;position:absolute;text-align:center;top:0;right:0;margin:10px;border:3px double #FFF;z-index:10000000}.sb{width:20px;background:#fff;text-align:center}#bh{color:#fff;font-weight:700}#cookieid{display:block;text-align:center;width:calc(100% - 20px);margin:6px}.bb{border-radius:3px;color:#000;display:inline-block;border:0;height:24px;margin:2px 2px 0;width:120px;text-align:center;position:relative;background:#fff;line-height:24px}.bb:hover,.sb:hover{cursor:pointer}</style>"
+	str += "<style>.cookiemain{width:500px;height:85px;background-color:red;position:fixed;text-align:center;top:0;right:0;margin:10px;border:3px double #FFF;z-index:10000000}.sb{width:20px;background:#fff;text-align:center}#bh{color:#fff;font-weight:700}#cookieid{display:block;text-align:center;width:calc(100% - 20px);margin:6px}.bb{border-radius:3px;color:#000;display:inline-block;border:0;height:24px;margin:2px 2px 0;width:120px;text-align:center;position:relative;background:#fff;line-height:24px}.bb:hover,.sb:hover{cursor:pointer}</style>"
 	str += "<div class='cookiemain'>";
 	str += "<div class='sb' style='float:right;' onclick='togglediv(&quot;mbmd&quot;);'>X</div>";
 	str += "<div class='sb' style='float:left;' onclick='madeby()'>?</div>";
