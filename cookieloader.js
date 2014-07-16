@@ -1,8 +1,3 @@
-function getEmbed(){
-   var e = window.frames["cookieloader"];
-   return e;
-}
-
 var END_OF_INPUT = -1;
 var base64Chars = new Array(
     'A','B','C','D','E','F','G','H',
@@ -68,24 +63,11 @@ function encodeBase64(str){
     return result;
 }
 
-/* make string URL safe; remove padding =, replace "+" and "/" with "*" and "-" */
 function encodeBase64ForURL(str){
    var str = encodeBase64(str).replace(/=/g, "").replace(/\+/g, "*").replace(/\//g, "-");
-   str = str.replace(/\s/g, "");   /* Watch out! encodeBase64 breaks lines at 76 chars -- we don't want any whitespace */
+   str = str.replace(/\s/g, "");
    return str;
 }
-
-function keyPressHandler(e) {
-      var kC  = (window.event) ?    // MSIE or Firefox?
-                 event.keyCode : e.keyCode;
-      var Esc = (window.event) ?   
-                27 : e.DOM_VK_ESCAPE // MSIE : Firefox
-      if(kC==Esc){
-         // alert("Esc pressed");
-         toggleItem("mbmd");
-      }
-}
-
 
 function toggleItem(id){
   var item = document.getElementById(id);
@@ -105,9 +87,6 @@ function showItem(id){
     if(item){
         item.style.display = "";
     }
-  }
-  catch(e){
-  
   }
 }
 
@@ -159,28 +138,9 @@ function madeby() {
 }
 
 (function(){
-
-  // get the currently selected text
-  var t;
-  try {
-    t=((window.getSelection && window.getSelection())||(document.getSelection && document.getSelection())||(document.selection && document.selection.createRange && document.selection.createRange().text));
-  }
-  catch(e){ // access denied on https sites
-    t = "";
-  }
-
-  var calcstring = t.toString();
+  var existing = document.getElementById('mbmd');
   
-  if (calcstring == ""){
-    calcstring = "";
-  }
-  
- 
-  var iframe_url = "" + "?d=&c=" + encodeBase64ForURL(calcstring);
- 
-  var existing_iframe = document.getElementById('mbmd');
-  
-  if (existing_iframe){
+  if (existing){
     showItem('mbmd');
     return;
   }
