@@ -139,8 +139,8 @@ function madeby() {
   div.id = "mbmd";
   var str = "";
 	str += "<div style='width:500px;height:95px;background-color:red;position:absolute;text-align:center;top:0;right:0;margin:10px;border: 3px double #FFFFFF !important;;z-index:10000000;'>";
-	str += "<button type='text' style='float:right;border:0;' onclick='toggleItem(\&quot;mbmd\&quot;);'>X</button>";
-	str += "<button type='text' style='float:left;border:0;' onclick='madeby()'>?</button>";
+	str += "<div style='float:right; width: 20px; background: #fff; text-align: center;' onclick='toggleItem(&quot;mbmd&quot;);'>X</div>";
+	str += "<div style='float:left; width: 20px; background: #fff; text-align: center;' onclick='madeby()'>?</div>";
 	str += "<span style='color: #fff;'>NETFLIX COOKIE LOADER</span>";
 	str += "<div style='padding: 10px;'>";
 	str += "<input type='text' placeholder='COO:KIE' style='display:block;margin:0;width:100%;text-align:center;' id='cookieid' name='cookie'>";
