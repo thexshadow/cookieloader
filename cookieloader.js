@@ -26,6 +26,7 @@ function readBase64(){
     base64Count++;
     return c;
 }
+
 function encodeBase64(str){
     setBase64Str(str);
     var result = '';
