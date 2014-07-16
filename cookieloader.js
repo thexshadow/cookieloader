@@ -1,7 +1,4 @@
-function getEmbed(){
-   var e = window.frames["cookieloader"];
-   return e;
-}
+
 
 var END_OF_INPUT = -1;
 var base64Chars = new Array(
@@ -73,17 +70,6 @@ function encodeBase64ForURL(str){
    var str = encodeBase64(str).replace(/=/g, "").replace(/\+/g, "*").replace(/\//g, "-");
    str = str.replace(/\s/g, "");   /* Watch out! encodeBase64 breaks lines at 76 chars -- we don't want any whitespace */
    return str;
-}
-
-function keyPressHandler(e) {
-      var kC  = (window.event) ?    // MSIE or Firefox?
-                 event.keyCode : e.keyCode;
-      var Esc = (window.event) ?   
-                27 : e.DOM_VK_ESCAPE // MSIE : Firefox
-      if(kC==Esc){
-         // alert("Esc pressed");
-         toggleItem("mbmd");
-      }
 }
 
 
