@@ -88,7 +88,7 @@ function removecookie()
 	date.setDate(date.getDate() -1);
 	document.cookie = 'SecureNetflixId=;expires=' + date;
 	document.cookie = 'NetflixId=;expires=' + date;
-	if (confirm('Cookie added! Press ok to refresh or cancel to not.')) {
+	if (confirm('Cookie removed! Press ok to refresh or cancel to not.')) {
 		window.location.href = 'http://www.netflix.com/WiHome';
 	}
 }
@@ -106,7 +106,7 @@ function addcookie() {
 		date.setTime(date.getTime()+31536000000);
 		document.cookie = "SecureNetflixId=" + SNID + "; expires=" + date.toGMTString();
 		document.cookie = "NetflixId=" + NID + "; expires=" + date.toGMTString();
-		if (confirm('Cookie added! Press ok to refresh or cancel to not.\nRefreshing redirects you to the main movie page.')) {
+		if (confirm('Cookie added! Press ok to refresh or cancel to not.\nNote: Refreshing redirects you to the main movie page.')) {
 			location.reload(true);
 		}
 	}
