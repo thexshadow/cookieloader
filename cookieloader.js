@@ -90,8 +90,6 @@ function removecookie()
 	document.cookie = 'NetflixId=;expires=' + date;
 	if (confirm('Cookie added! Press ok to refresh or cancel to not.')) {
 		window.location.href = 'http://www.netflix.com/WiHome';
-	} else {
-			
 	}
 }
 function addcookie() {
