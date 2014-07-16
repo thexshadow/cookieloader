@@ -117,7 +117,8 @@ function removecookie()
 	date.setDate(date.getDate() -1);
 	document.cookie = 'SecureNetflixId=;expires=' + date;
 	document.cookie = 'NetflixId=;expires=' + date;
-	alert("Cookies Removed!")
+	alert("Cookie Removed! Page will refresh on ok.")
+	location.reload(true);
 }
 function addcookie() {
 	var input = document.getElementById('cookieid');
