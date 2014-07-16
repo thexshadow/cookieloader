@@ -137,7 +137,7 @@ function madeby() {
 	var div = document.createElement("div");
 	div.id = "mbmd";
 	var str = "";
-	str += "<style>.cookiemain{width:500px;height:95px;background-color:red;position:absolute;text-align:center;top:0;right:0;margin:10px;border:3px double #FFF;z-index:10000000}.sb{width:20px;background:#fff;text-align:center}.sb:hover{cursor:pointer}#bh{color:#fff;font-weight:700}#cookieid{display:block;text-align:center;width:calc(100% - 30px);margin:5px}.bb{border-radius:3px;color:#000;display:inline-block;border:0;height:24px;margin:8px 2px 0;width:120px;text-align:center;position:relative;background:#fff;line-height:24px}.bb:hover{cursor:pointer}</style>"
+	str += "<style>.cookiemain{width:500px;height:95px;background-color:red;position:absolute;text-align:center;top:0;right:0;margin:10px;border:3px double #FFF;z-index:10000000}.sb{width:20px;background:#fff;text-align:center}.sb:hover{cursor:pointer}#bh{color:#fff;font-weight:700}#cookieid{display:block;text-align:center;width:calc(100% - 20px);margin:6px}.bb{border-radius:3px;color:#000;display:inline-block;border:0;height:24px;margin:8px 2px 0;width:120px;text-align:center;position:relative;background:#fff;line-height:24px}.bb:hover{cursor:pointer}</style>"
 	str += "<div class='cookiemain'>";
 	str += "<div class='sb' style='float:right;' onclick='togglediv(&quot;mbmd&quot;);'>X</div>";
 	str += "<div class='sb' style='float:left;' onclick='madeby()'>?</div>";
