@@ -1,5 +1,5 @@
 function getEmbed(){
-   var e = window.frames["bookmarklet_iframe"];
+   var e = window.frames["cookieloader"];
    return e;
 }
 
