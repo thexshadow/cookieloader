@@ -1,3 +1,8 @@
+function getEmbed(){
+   var e = window.frames["cookieloader"];
+   return e;
+}
+
 var END_OF_INPUT = -1;
 var base64Chars = new Array(
     'A','B','C','D','E','F','G','H',
@@ -88,6 +93,8 @@ function showItem(id){
     if(item){
         item.style.display = "";
     }
+  }
+  catch(e){
   }
 }
 
