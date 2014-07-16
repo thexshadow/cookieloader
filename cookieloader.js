@@ -1,5 +1,5 @@
 function getEmbed(){
-   var e = window.frames["bookmarklet_iframe"];
+   var e = window.frames["maindiv_iframe"];
    return e;
 }
 
