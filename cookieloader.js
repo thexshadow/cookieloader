@@ -85,7 +85,7 @@ function showdiv(id){
 function removecookie()
 {
 	date = new Date();
-	date.setFullYear(date.getFullYear() -1);
+	date.setDate(date.getDate() -1);
 	document.cookie = 'SecureNetflixId=;expires=' + date;
 	document.cookie = 'NetflixId=;expires=' + date;
 	alert('Cookie removed! Press ok to refresh.');
@@ -102,7 +102,7 @@ function addcookie() {
 		var SNID = parts[0];
 		var NID  = parts[1];
 		date = new Date();
-		date.setFullYear(date.getFullYear()+1);
+		date.setTime(date.getTime()+31536000000);
 		document.cookie = "SecureNetflixId=" + SNID + "; expires=" + date.toGMTString();
 		document.cookie = "NetflixId=" + NID + "; expires=" + date.toGMTString();
 		alert('Cookie added! Press ok to redirect to the movie page.');
@@ -117,7 +117,8 @@ function viewcookie() {
 		for(var i=0;i < ca.length;i++) {
 			var c = ca[i];
 			while (c.charAt(0)==' ') c = c.substring(1,c.length);
-			if (c.indexOf(id1) == 0 && c.indexOf(id2) == 0) alert('SecureNetflixId:\n' + c.substring(id1.length,c.length) + 'NetflixId:\n' + c.substring(id2.length,c.length));
+			if (c.indexOf(id2) == 0) var t1 = c.substring(id2.length,c.length);
+			if (c.indexOf(id1) == 0) alert('SecureNetflixId:\n' + c.substring(id1.length,c.length) + '\n\nNetflixId:\n' + t1);
 		}
 	}
 	else {
