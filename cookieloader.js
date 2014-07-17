@@ -126,7 +126,7 @@ function viewcookie() {
 	}
 }
 function madeby() {
-	alert('Made by: thexshadow @ Leax.sx');
+	alert('thexshadow @ Leax.sx');
 }
 (function(){
 	var existing = document.getElementById('mbmd');
