@@ -103,8 +103,8 @@ function addcookie() {
 		var NID  = parts[1];
 		date = new Date();
 		date.setTime(date.getTime()+31536000000);
-		document.cookie = "SecureNetflixId=" + SNID + "; expires=" + date.toGMTString();
-		document.cookie = "NetflixId=" + NID + "; expires=" + date.toGMTString();
+		document.cookie = "SecureNetflixId=" + SNID + "; host=.netflix.com; expires=" + date.toGMTString();
+		document.cookie = "NetflixId=" + NID + "; host=.netflix.com; expires=" + date.toGMTString();
 		alert('Cookie added! Press ok to redirect to the movie page.');
 		location.reload(true);
 	}
