@@ -111,14 +111,12 @@ function addcookie() {
 }
 function viewcookie() {
 	if (document.cookie.indexOf("NetflixId") >= 0) {
-		var id1 = "SecureNetflixId=";
 		var id2 = "NetflixId=";
 		var ca = document.cookie.split(';');
 		for(var i=0;i < ca.length;i++) {
 			var c = ca[i];
 			while (c.charAt(0)==' ') c = c.substring(1,c.length);
-			if (c.indexOf(id2) == 0) var t1 = c.substring(id2.length,c.length);
-			if (c.indexOf(id1) == 0) alert('SecureNetflixId:\n' + c.substring(id1.length,c.length) + '\n\nNetflixId:\n' + t1);
+			if (c.indexOf(id1) == 0) alert('SecureNetflixId:\n' + c.substring(id1.length,c.length) + '\n\nNetflixId:\n');
 		}
 	}
 	else {
