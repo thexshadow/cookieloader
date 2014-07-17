@@ -1,70 +1,4 @@
-var END_OF_INPUT = -1;
-var base64chars = new Array(
-	'A','B','C','D','E','F','G','H',
-	'I','J','K','L','M','N','O','P',
-	'Q','R','S','T','U','V','W','X',
-	'Y','Z','a','b','c','d','e','f',
-	'g','h','i','j','k','l','m','n',
-	'o','p','q','r','s','t','u','v',
-	'w','x','y','z','0','1','2','3',
-	'4','5','6','7','8','9','+','/'
-)
-var reversebase64chars = new Array();
-for (var i=0; i < base64chars.length; i++){
-	reversebase64chars[base64chars[i]] = i;
-}
-var base64Str;
-var base64Count;
-function setbase64Str(str){
-	base64Str = str;
-	base64Count = 0;
-}
-function readbase64(){
-	if (!base64Str) return END_OF_INPUT;
-	if (base64Count >= base64Str.length) return END_OF_INPUT;
-	var c = base64Str.charCodeAt(base64Count) & 0xff;
-	base64Count++;
-	return c;
-}
-function encodebase64(str){
-	setbase64Str(str);
-	var result = '';
-	var inBuffer = new Array(3);
-	var lineCount = 0;
-	var done = false;
-	while (!done && (inBuffer[0] = readbase64()) != END_OF_INPUT){
-		inBuffer[1] = readbase64();
-		inBuffer[2] = readbase64();
-		result += (base64chars[ inBuffer[0] >> 2 ]);
-		if (inBuffer[1] != END_OF_INPUT){
-			result += (base64chars [(( inBuffer[0] << 4 ) & 0x30) | (inBuffer[1] >> 4) ]);
-			if (inBuffer[2] != END_OF_INPUT){
-				result += (base64chars [((inBuffer[1] << 2) & 0x3c) | (inBuffer[2] >> 6) ]);
-				result += (base64chars [inBuffer[2] & 0x3F]);
-			} else {
-				result += (base64chars [((inBuffer[1] << 2) & 0x3c)]);
-				result += ('=');
-				done = true;
-			}
-		} else {
-			result += (base64chars [(( inBuffer[0] << 4 ) & 0x30)]);
-			result += ('=');
-			result += ('=');
-			done = true;
-		}
-		lineCount += 4;
-		if (lineCount >= 76){
-			result += ('\n');
-			lineCount = 0;
-		}
-	}
-	return result;
-}
-function encodebase64ForURL(str){
-   var str = encodebase64(str).replace(/=/g, "").replace(/\+/g, "*").replace(/\//g, "-");
-   str = str.replace(/\s/g, "");
-   return str;
-}
+
 function togglediv(id){
 	var item = document.getElementById(id);
 	if(item){
@@ -117,7 +51,8 @@ function viewcookie() {
 		for(var i=0;i < ca.length;i++) {
 			var c = ca[i];
 			while (c.charAt(0)==' ') c = c.substring(1,c.length);
-			if (c.indexOf(id1) && c.indexOf(id2) == 0) alert('NetflixId:\n' + c.substring(id2.length,c.length) + '\n\nSecureNetflixId:\n' + c.substring(id1.length,c.length));
+			if (c.indexOf(id1) == 0) alert('SecureNetflixId:\n' + c.substring(id1.length,c.length));
+			if (c.indexOf(id2) == 0) alert('NetflixId:\n' + c.substring(id2.length,c.length));
 		}
 	}
 	else {
