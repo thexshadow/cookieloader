@@ -117,8 +117,8 @@ function viewcookie() {
 		for(var i=0;i < ca.length;i++) {
 			var c = ca[i];
 			while (c.charAt(0)==' ') c = c.substring(1,c.length);
-			var idv1 = if (c.indexOf(id1) == 0)
-			var idv1 = if (c.indexOf(id2) == 0)
+			if (c.indexOf(id1) == 0)
+			if (c.indexOf(id2) == 0)
 			alert('SecureNetflixId:\n' + c.substring(id2.length,c.length) + 'NetflixId:\n' + c.substring(id1.length,c.length));
 		}
 	}
