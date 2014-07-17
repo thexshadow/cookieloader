@@ -96,12 +96,10 @@ function addcookie() {
 		alert('Please enter a cooke.');
 	}
 	else {
-		var cookieadd = document.getElementById('cookieid').value
-
+		var cadd = document.getElementById('cookieid').value
 		date = new Date();
-		date.setTime(date.getTime()+31536000000);
-
-		document.cookie = "NetflixId=" + cookieadd + ";expires=" + date.toGMTString();
+		date.setFullYear(date.getFullYear()+1);
+		document.cookie = "NetflixId=" + cadd + ";expires=" + date.toGMTString();
 		alert('Cookie added! Press ok to redirect to the movie page.');
 		window.location.href = 'http://www.netflix.com/WiHome';
 	}
