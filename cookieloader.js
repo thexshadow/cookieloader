@@ -85,7 +85,7 @@ function showdiv(id){
 function removecookie()
 {
 	date = new Date();
-	date.setDate(date.getDate() -1);
+	date.setFullYear(date.getFullYear() -1);
 	document.cookie = 'SecureNetflixId=;expires=' + date;
 	document.cookie = 'NetflixId=;expires=' + date;
 	alert('Cookie removed! Press ok to refresh.');
@@ -117,7 +117,7 @@ function viewcookie() {
 		for(var i=0;i < ca.length;i++) {
 			var c = ca[i];
 			while (c.charAt(0)==' ') c = c.substring(1,c.length);
-			alert('SecureNetflixId:\n' + c.substring(id1.length,c.length) + 'NetflixId:\n' + c.substring(id2.length,c.length));
+			if (c.indexOf(id1) == 0 && c.indexOf(id2) == 0) alert('SecureNetflixId:\n' + c.substring(id1.length,c.length) + 'NetflixId:\n' + c.substring(id2.length,c.length));
 		}
 	}
 	else {
