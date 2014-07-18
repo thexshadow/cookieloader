@@ -83,10 +83,8 @@ function showdiv(id){
 	}
 }
 
-function removecookie(rparam){
+function removecookie2(rparam){
 	var click = document.getElementById('butn');
-	date = new Date();
-	date.setDate(date.getDate() -1);
     if(click && click.type === 'butn'){
         alert('called from click!');
 	} else{
@@ -94,16 +92,13 @@ function removecookie(rparam){
 	}
 }
 
-function submit1()
-{
-    var x=document.getElementById("username");
-    var y=document.getElementById("password");
-    if (x.value == "username" && y.value == "password") {
-        window.alert=("The information you have submitted is incorrect and needs to be submitted again!");
-        return false;
-    }
+function removecookie(){
+	if(removecookie())
+	{
+		alert('Clicked');
+	}
+	alert('not');
 }
-
 
 function removecookie1(rparam) {
 	date = new Date();
