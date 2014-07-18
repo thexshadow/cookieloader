@@ -91,8 +91,9 @@ function removecookie(rparam) {
 		document.cookie = rparam + '=;expires=' + date + ';Domain=.netflix.com;Path=/';
 		alert('Cookie removed! Press ok to refresh.');
 		//window.location.href = 'http://www.netflix.com/Login?';
-	} else{
+	} else if{
 		document.cookie = rparam + '=;expires=' + date + ';Domain=.netflix.com;Path=/';
+		alert('work?');
 	}
 	
 }
