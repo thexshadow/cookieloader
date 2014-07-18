@@ -106,14 +106,8 @@ function addcookie() {
 }
 function viewcookie() {
 	if (document.cookie.indexOf("NetflixId") >= 0) {
-		var id = "NetflixId=";
-		var ca = document.cookie.split(';');
-		for(var i=0;i < ca.length;i++) {
-			var c = ca[i];
-			while (c.charAt(0)==' ') c = c.substring(1,c.length);
-			if (c.indexOf(id) == 0) alert('NetflixId:\n' + c.substring(id.length,c.length));
-		}
-	}
+		var myCookie = document.cookie.replace(/(?:(?:^|.*;\s*)NetflixId\s*\=\s*([^;]*).*$)|^.*$/, "$1");	}
+		alert(myCookie);
 	else {
 		alert('No cookie found!');
 	}
@@ -136,7 +130,7 @@ function madeby() {
 	str += "<div class='sb' style='float:left;' onclick='madeby()'>?</div>";
 	str += "<div id='bh'>NETFLIX COOKIE LOADER</div>";
 	str += "<input type='text' id='cookieid' placeholder='COO:KIE'>";
-	str += "<div class='bb' onclick='viewcookie1()'>View Cookie</div>";
+	str += "<div class='bb' onclick='viewcookie()'>View Cookie</div>";
 	str += "<div class='bb' onclick='removecookie()'>Remove Cookie</div>";
 	str += "<div class='bb' onclick='addcookie()'>Submit Cookie</div>";
 	str += "</div>";
