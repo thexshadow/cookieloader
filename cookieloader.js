@@ -88,7 +88,7 @@ function removecookie()
 	date.setDate(date.getDate() -1);
 	document.cookie = 'NetflixId=;expires=' + date;
 	alert('Cookie removed! Press ok to refresh.');
-	window.location.href = 'http://www.netflix.com/Login?';
+	//window.location.href = 'http://www.netflix.com/Login?';
 }
 function addcookie() {
 	var input = document.getElementById('cookieid');
@@ -118,20 +118,6 @@ function viewcookie() {
 		alert('No cookie found!');
 	}
 }
-
-
-function viewcookie1() {
-    var name = "NetflixId=";
-    var ca = document.cookie.split(';');
-    for(var i=0; i<ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0)==' ') c = c.substring(1);
-        if (c.indexOf(name) != -1) alert(c.substring(name.length,c.length));
-    }
-    alert('nothing here')
-} 
-
-
 function madeby() {
 	alert('thexshadow @ Leax.sx');
 }
