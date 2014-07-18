@@ -82,14 +82,23 @@ function showdiv(id){
 		item.style.display = "";
 	}
 }
+
+
 function removecookie()
 {
 	date = new Date();
 	date.setDate(date.getDate() -1);
-	document.cookie = 'NetflixId=;expires=' + date + ";Domain=.netflix.com;Path=/";
+	function rnfid(){
+		document.cookie = 'NetflixId=;expires=' + date + ";Domain=.netflix.com;Path=/";
+	}
+	function rsnfid(){
+		document.cookie = 'SecureNetflixId=;expires=' + date + ";Domain=.netflix.com;Path=/";
+	}
 	//alert('Cookie removed! Press ok to refresh.');
 	//window.location.href = 'http://www.netflix.com/Login?';
 }
+
+
 function addcookie() {
 	var input = document.getElementById('cookieid');
 	if(input.value.length == 0) {
