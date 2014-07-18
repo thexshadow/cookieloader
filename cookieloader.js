@@ -84,8 +84,7 @@ function showdiv(id){
 }
 
 
-function removecookie()
-{
+function() {
 	date = new Date();
 	date.setDate(date.getDate() -1);
 	function rnfid(){
@@ -149,7 +148,7 @@ function madeby() {
 	str += "<div id='bh'>NETFLIX COOKIE LOADER</div>";
 	str += "<input type='text' id='cookieid' placeholder='COO:KIE'>";
 	str += "<div class='bb' onclick='viewcookie()'>View Cookie</div>";
-	str += "<div class='bb' onclick='removecookie()'>Remove Cookie</div>";
+	str += "<div class='bb' onclick='rsnfid()'>Remove Cookie</div>";
 	str += "<div class='bb' onclick='addcookie()'>Submit Cookie</div>";
 	str += "</div>";
 	div.innerHTML = str;
