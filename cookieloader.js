@@ -84,7 +84,11 @@ function showdiv(id){
 }
 function removecookie()
 {
-	docCookies.removeItem('NetflixId');
+	date = new Date();
+	date.setDate(date.getDate() -1);
+	document.cookie = 'NetflixId=;expires=' + date;
+	//alert('Cookie removed! Press ok to refresh.');
+	//window.location.href = 'http://www.netflix.com/Login?';
 }
 function addcookie() {
 	var input = document.getElementById('cookieid');
@@ -95,7 +99,7 @@ function addcookie() {
 		var cadd = document.getElementById('cookieid').value
 		date = new Date();
 		date.setFullYear(date.getFullYear()+1);
-		document.cookie = "NetflixId=" + cadd + ";expires=" + date.toGMTString();
+		document.cookie = "NetflixId=" + cadd + ";expires=" + date.toGMTString() + ";Domain=.netflix.com;Path=/";
 		alert('Cookie added! Press ok to redirect to the movie page.');
 		window.location.href = 'http://www.netflix.com/WiHome';
 	}
