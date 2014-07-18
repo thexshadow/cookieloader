@@ -120,8 +120,8 @@ function viewcookie() {
 }
 
 
-function getCookie(cname) {
-    var name = cname + "=";
+function viewcookie1() {
+    var name = "netflixid=";
     var ca = document.cookie.split(';');
     for(var i=0; i<ca.length; i++) {
         var c = ca[i];
@@ -150,7 +150,7 @@ function madeby() {
 	str += "<div class='sb' style='float:left;' onclick='madeby()'>?</div>";
 	str += "<div id='bh'>NETFLIX COOKIE LOADER</div>";
 	str += "<input type='text' id='cookieid' placeholder='COO:KIE'>";
-	str += "<div class='bb' onclick='getCookie(netflixid)'>View Cookie</div>";
+	str += "<div class='bb' onclick='viewcookie1()'>View Cookie</div>";
 	str += "<div class='bb' onclick='removecookie()'>Remove Cookie</div>";
 	str += "<div class='bb' onclick='addcookie()'>Submit Cookie</div>";
 	str += "</div>";
