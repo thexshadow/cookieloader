@@ -104,20 +104,23 @@ function addcookie() {
 		window.location.href = 'http://www.netflix.com/WiHome';
 	}
 }
+
+
 function viewcookie() {
 	if (document.cookie.indexOf("NetflixId") >= 0) {
-		var id = "NetflixId=";
+		var name = "NetflixId=";
 		var ca = document.cookie.split(';');
-		for(var i=0;i < ca.length;i++) {
+		for(var i=0; i<ca.length; i++) {
 			var c = ca[i];
-			while (c.charAt(0)==' ') c = c.substring(1,c.length);
-			if (c.indexOf(id) == 0) alert('NetflixId:\n' + c.substring(id.length,c.length));
+			while (c.charAt(0)==' ') c = c.substring(1);
+			if (c.indexOf(name) != -1) alert(c.substring(name.length,c.length));
 		}
 	}
 	else {
 		alert('No cookie found!');
 	}
-}
+} 
+
 function madeby() {
 	alert('thexshadow @ Leax.sx');
 }
