@@ -87,7 +87,7 @@ function removecookie(rparam){
 	var click = document.getElementById('butn');
 	date = new Date();
 	date.setDate(date.getDate() -1);
-    if(rparam && rparam.type === 'click'){
+    if(rparam && rparam.type === click){
         alert('called from click!');
 	} else{
 
