@@ -95,7 +95,7 @@ function removecookie2(rparam){
 }
 
 function removecookie(rparam){
-	if (true){
+	if (result){
 		alert('Clicked');
 	} else {
 		alert('Not Clicked');
