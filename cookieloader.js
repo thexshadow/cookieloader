@@ -92,7 +92,19 @@ function removecookie2(rparam){
 	}
 }
 
-function removecookie(){
+function removecookie(buttonElement){
+	var buttonClickedId = buttonElement.id;
+	if( buttonClickedId === 'butn' ){
+		alert('Clicked');
+	}
+	// ...
+	else{
+		alert('not');
+	}
+}
+
+
+function removecookie3(){
 	if(removecookie())
 	{
 		alert('Clicked');
