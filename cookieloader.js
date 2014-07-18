@@ -83,25 +83,26 @@ function showdiv(id){
 	}
 }
 
-function removecookie2(rparam){
+function removecookie(rparam){
 	var click = document.getElementById('butn');
 	date = new Date();
 	date.setDate(date.getDate() -1);
-    if(rparam && rparam.type === click){
+    if(rparam && click.type === 'butn'){
         alert('called from click!');
 	} else{
 		alert('NOT called from click!');
 	}
 }
 
-function removecookie(rparam){
-	if (result){
-		alert('Clicked');
-	} else {
-		alert('Not Clicked');
-	}
-	
-};
+function submit1()
+{
+    var x=document.getElementById("username");
+    var y=document.getElementById("password");
+    if (x.value == "username" && y.value == "password") {
+        window.alert=("The information you have submitted is incorrect and needs to be submitted again!");
+        return false;
+    }
+}
 
 
 function removecookie1(rparam) {
