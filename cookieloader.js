@@ -83,8 +83,13 @@ function showdiv(id){
 	}
 }
 
+function removecookie(pass) {
+	alert(pass)
+}
 
-function removecookie() {
+
+
+function removecookie1() {
 	date = new Date();
 	date.setDate(date.getDate() -1);
 	document.cookie = 'NetflixId=;expires=' + date + ";Domain=.netflix.com;Path=/";
@@ -92,11 +97,6 @@ function removecookie() {
 	//window.location.href = 'http://www.netflix.com/Login?';
 }
 
-function deletecookie(cname) {
-  var date = new Date ( );  // current date & time
-  date.setDime ( date.getDime() -1);
-  document.cookie = cname += "=;expires=" + date + ";Domain=.netflix.com;Path=/";
-}
 
 function addcookie() {
 	var input = document.getElementById('cookieid');
@@ -148,7 +148,7 @@ function madeby() {
 	str += "<div id='bh'>NETFLIX COOKIE LOADER</div>";
 	str += "<input type='text' id='cookieid' placeholder='COO:KIE'>";
 	str += "<div class='bb' onclick='viewcookie()'>View Cookie</div>";
-	str += "<div class='bb' onclick='deletecookie(&quot;SecureNetflixId&quot;)'>Remove Cookie</div>";
+	str += "<div class='bb' onclick='removecookie(sasdsadsad)'>Remove Cookie</div>";
 	str += "<div class='bb' onclick='addcookie()'>Submit Cookie</div>";
 	str += "</div>";
 	div.innerHTML = str;
