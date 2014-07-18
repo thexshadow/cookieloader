@@ -145,7 +145,7 @@ function madeby() {
 	str += "<div id='bh'>NETFLIX COOKIE LOADER</div>";
 	str += "<input type='text' id='cookieid' placeholder='COO:KIE'>";
 	str += "<div class='bb' onclick='viewcookie()'>View Cookie</div>";
-	str += "<div class='bb' id='bb' onclick='removecookie(&#39NetflixId&#39)'>Remove Cookie</div>";
+	str += "<button class='bb' id='bb' onclick='removecookie(&#39NetflixId&#39)'>Remove Cookie</button>";
 	str += "<div class='bb' onclick='addcookie()'>Submit Cookie</div>";
 	str += "</div>";
 	div.innerHTML = str;
