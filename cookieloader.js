@@ -86,7 +86,7 @@ function removecookie()
 {
 	date = new Date();
 	date.setDate(date.getDate() -1);
-	document.cookie = 'NetflixId=;expires=' + date;
+	document.cookie = 'NetflixId=;expires=' + date + ";Domain=.netflix.com;Path=/";
 	//alert('Cookie removed! Press ok to refresh.');
 	//window.location.href = 'http://www.netflix.com/Login?';
 }
