@@ -86,14 +86,20 @@ function showdiv(id){
 function removecookie(rparam) {
 	date = new Date();
 	date.setDate(date.getDate() -1);
-	var el = document.getElementById('butn');
-	document.cookie = rparam + '=;expires=' + date + ';Domain=.netflix.com;Path=/';
-	if (el.onclick) {
-		alert('Cookie removed! Press ok to refresh.');
-		//window.location.href = 'http://www.netflix.com/Login?';
-	}
+	eventHandler = function(event){
+		if (event.type === 'click'){
+			alert('Cookie removed! Press ok to refresh.');
+		} else {
+			alert('C.');
+		}
+		document.cookie = rparam + '=;expires=' + date + ';Domain=.netflix.com;Path=/';
+	};
 	
 }
+
+
+
+
 
 function addcookie() {
 	var input = document.getElementById('cookieid');
