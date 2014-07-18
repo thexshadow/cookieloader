@@ -83,17 +83,25 @@ function showdiv(id){
 	}
 }
 
-function removecookie(rparam){
+function removecookie2(rparam){
 	var click = document.getElementById('butn');
 	date = new Date();
 	date.setDate(date.getDate() -1);
     if(rparam && rparam.type === click){
         alert('called from click!');
 	} else{
-
 		alert('NOT called from click!');
 	}
 }
+
+function removecookie(rparam){
+	if (rparam.type === 'click'){
+		alert('Clicked');
+	} else {
+		alert('Not Clicked');
+	}
+	
+};
 
 
 function removecookie1(rparam) {
