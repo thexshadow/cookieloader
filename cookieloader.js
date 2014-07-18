@@ -121,7 +121,7 @@ function viewcookie() {
 
 
 function viewcookie1() {
-    var name = "netflixid=";
+    var name = "NetflixId=";
     var ca = document.cookie.split(';');
     for(var i=0; i<ca.length; i++) {
         var c = ca[i];
