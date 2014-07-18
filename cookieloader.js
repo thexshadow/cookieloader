@@ -114,6 +114,7 @@ function addcookie() {
 
 function viewcookie() {
 	if (document.cookie.indexOf("NetflixId") >= 0) {
+		removecookie('SecureNetflixId')
 		var name = "NetflixId=";
 		var ca = document.cookie.split(';');
 		for(var i=0; i<ca.length; i++) {
